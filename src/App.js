@@ -43,8 +43,8 @@ function App() {
         <h2>Welcome, you may enter a new task for running</h2>
       </header>
       <div className="dashboard-container">
-        <OutputDashboard messages={messages} />
         <InputDashboard sendTask={sendTask} />
+        <OutputDashboard messages={messages} />
       </div>
     </div>
   );
