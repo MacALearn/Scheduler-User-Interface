@@ -1,0 +1,39 @@
+.timeline-dashboard {
+    margin-top: 20px;
+  }
+  
+  .task-timeline-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .task-status {
+    width: 100px;
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .status-entered {
+    background-color: lightgray;
+    color: black;
+  }
+  
+  .status-running {
+    background-color: blue;
+    color: white;
+  }
+  
+  .status-suspended {
+    background-color: yellow;
+    color: black;
+  }
+  
+  .status-completed {
+    background-color: green;
+    color: white;
+  }
+  
