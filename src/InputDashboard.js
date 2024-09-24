@@ -29,6 +29,8 @@ const InputDashboard = ({ sendTask }) => {
     } else if (taskType === 'iterative') {
       task.iterationsRemaining = parseInt(iterationsRemaining);  
       task.executionInterval = parseInt(executionInterval);      
+    }else if(taskType === 'ordered'){
+      task.isOrdered = true;
     }
 
     sendTask(task);
@@ -52,6 +54,7 @@ const InputDashboard = ({ sendTask }) => {
             <option value="basic">Basic Task</option>
             <option value="deadline">Deadline Task</option>
             <option value="iterative">Iterative Task</option>
+            <option value="ordered">ordered Task</option>
           </select>
         </label>
         
