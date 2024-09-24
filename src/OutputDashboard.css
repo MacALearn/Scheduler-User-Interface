@@ -1,34 +1,23 @@
-.task-running {
-    color: blue;
-  }
-  
-  .task-suspended {
-    color: yellow;
-  }
-  
-  .task-terminated {
-    color: red;
+/* Style for task messages with light background colors */
+.task-executing {
+    background-color: #cce5ff; /* Light blue background */
+    color: #004085; /* Dark blue text */
   }
   
   .task-completed {
-    color: green;
-  }
-  .status-terminate {
-    background-color: #f8d7da;
-    border-color: #f5c6cb;
-    color: #721c24;
+    background-color: #d4edda; /* Light green background */
+    color: #155724; /* Dark green text */
   }
   
-  .status-suspended {
-    background-color: #fff3cd;
-    border-color: #ffeeba;
-    color: #856404;
+  .task-suspended {
+    background-color: #fff3cd; /* Light yellow-orange background */
+    color: #856404; /* Dark yellow-orange text */
   }
   
-  .status-completed {
-    background-color: #d4edda;
-    border-color: #c3e6cb;
-    color: #155724;
+  /* General styles for the output dashboard */
+  .output-dashboard ul {
+    list-style-type: none;
+    padding: 0;
   }
   
   .output-dashboard li {
@@ -36,5 +25,6 @@
     margin: 5px 0;
     border-radius: 5px;
     border: 1px solid #ccc;
+    font-size: 1em;
   }
   

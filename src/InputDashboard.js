@@ -12,7 +12,7 @@ const InputDashboard = ({ sendTask }) => {
     e.preventDefault();
 
     // Validate that the values are positive
-    if (parseInt(runningTime) < 0 || (taskType === 'deadLine' && parseInt(deadline) < 0) ||
+    if (parseInt(runningTime) < 0 || (taskType === 'deadline' && parseInt(deadline) < 0) ||
         (taskType === 'iterative' && (parseInt(iterationsRemaining) < 0 || parseInt(executionInterval) < 0))) {
       alert("Please enter positive values for all fields.");
       return;
@@ -24,7 +24,7 @@ const InputDashboard = ({ sendTask }) => {
       runningTime: parseInt(runningTime),
     };
 
-    if (taskType === 'deadLine') {
+    if (taskType === 'deadline') {
       task.deadline = parseInt(deadline);
     } else if (taskType === 'iterative') {
       task.iterationsRemaining = parseInt(iterationsRemaining);  
@@ -50,7 +50,7 @@ const InputDashboard = ({ sendTask }) => {
           Task Type:
           <select value={taskType} onChange={(e) => setTaskType(e.target.value)}>
             <option value="basic">Basic Task</option>
-            <option value="deadLine">Deadline Task</option>
+            <option value="deadline">Deadline Task</option>
             <option value="iterative">Iterative Task</option>
           </select>
         </label>
@@ -76,7 +76,7 @@ const InputDashboard = ({ sendTask }) => {
           />
         </label>
 
-        {taskType === 'deadLine' && (
+        {taskType === 'deadline' && (
           <label>
             Deadline:
             <input 

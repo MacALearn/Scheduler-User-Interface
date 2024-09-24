@@ -1,0 +1,40 @@
+.client-status-panel {
+    position: fixed;
+    top: 10%;
+    right: 0;
+    width: 250px;
+    height: 300px;
+    background-color: #f8f9fa;
+    box-shadow: -2px 0 5px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease;
+    transform: translateX(100%);
+  }
+  
+  .client-status-panel.open {
+    transform: translateX(0);
+  }
+  
+  .messages-container {
+    padding: 10px;
+    overflow-y: auto;
+  }
+  
+  .status-message {
+    margin: 5px 0;
+    font-size: 14px;
+  }
+  
+  .toggle-button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+  }
+  
+  .toggle-button:hover {
+    background-color: #0056b3;
+  }
+  
