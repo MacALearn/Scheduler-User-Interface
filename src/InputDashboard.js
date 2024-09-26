@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './InputDashboard.css'; // Ensure the CSS file is imported
 
 const InputDashboard = ({ sendTask }) => {
   const [taskType, setTaskType] = useState('basic');
@@ -29,7 +30,7 @@ const InputDashboard = ({ sendTask }) => {
     } else if (taskType === 'iterative') {
       task.iterationsRemaining = parseInt(iterationsRemaining);  
       task.executionInterval = parseInt(executionInterval);      
-    }else if(taskType === 'ordered'){
+    } else if (taskType === 'ordered') {
       task.isOrdered = true;
     }
 
@@ -44,6 +45,8 @@ const InputDashboard = ({ sendTask }) => {
     setExecutionInterval('');    
   };
 
+  const priorities = ['Critical', 'Higher', 'Middle', 'Lower'];
+
   return (
     <div className="input-dashboard">
       <h2>Input Dashboard</h2>
@@ -54,20 +57,26 @@ const InputDashboard = ({ sendTask }) => {
             <option value="basic">Basic Task</option>
             <option value="deadline">Deadline Task</option>
             <option value="iterative">Iterative Task</option>
-            <option value="ordered">ordered Task</option>
+            <option value="ordered">Ordered Task</option>
           </select>
         </label>
         
-        <label>
-          Priority:
-          <select value={priority} onChange={(e) => setPriority(e.target.value)}>
-            <option value="Critical">CRITICAL</option>
-            <option value="Higher">HIGHER</option>
-            <option value="Middle">MIDDLE</option>
-            <option value="Lower">LOWER</option>
-          </select>
-        </label>
-
+        <div className="priority-selection">
+          <h3>Select Priority:</h3>
+          <div className="priority-buttons">
+            {priorities.map((level) => (
+              <button 
+                key={level} 
+                type="button" 
+                className={`priority-button ${priority === level ? 'selected' : ''}`} 
+                onClick={() => setPriority(level)}
+              >
+                {level}
+              </button>
+            ))}
+          </div>
+        </div>
+        
         <label>
           Running Time:
           <input 
@@ -124,3 +133,5 @@ const InputDashboard = ({ sendTask }) => {
 };
 
 export default InputDashboard;
+
+
