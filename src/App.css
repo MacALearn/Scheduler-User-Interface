@@ -3,9 +3,13 @@
   padding: 20px;
   font-family: Arial, sans-serif;
 }
-
 header {
-  margin-bottom: 20px;
+padding-left: 5%;  
+text-align: center;
+font-size: 40px;
+}
+header h2{
+  font-size: 35px;
 }
 
 .dashboard-container {
@@ -60,7 +64,7 @@ button:hover {
 
 form label {
   font-weight: bold;
-  margin-bottom: 10px;
+  margin-bottom: 2px;
   display: block;
 }
 
@@ -84,4 +88,62 @@ ul li {
   margin: 5px 0;
   border-radius: 5px;
   border: 1px solid #ccc;
+} 
+
+/* עיצוב כללי של גוף הקומפוננטה */
+.app-container {
+  display: grid;
+  height: 100vh; /* גובה מלא של המסך */
+  grid-template-rows: 50% 50%; /* חצי עליון וחצי תחתון */
+}
+
+/* החלק העליון - אזור הקלט והפלט */
+.dashboard-container {
+  display: flex; /* הצגת קלט ופלט זה לצד זה */
+  padding: 10px;
+  background-color: #f8f8f8;
+  border-bottom: 2px solid #ddd;
+}
+
+/* תיבת הקלט */
+.input-dashboard {
+  flex: 1; /* תופס חצי מהחלק העליון */
+  margin: 1px;
+  background-color: #e0f7fa;
+  padding: 5px;
+  box-sizing: border-box;
+  overflow-y: auto; /* הוספת גלילה */
+}
+
+/* תיבת הפלט */
+.output-dashboard {
+  flex: 1; /* תופס חצי מהחלק העליון */
+  margin: 5px;
+  background-color: #ffe0b2;
+  padding: 10px;
+  box-sizing: border-box;
+  overflow-y: auto; /* הוספת גלילה */
+}
+
+/* החלק התחתון - גרף */
+.chart-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  flex-direction: column;
+  width: 1300px;
+
+  /* background-color: #f0f4c3; */
+}
+.custom-tooltip {
+  background-color: #fff;
+  padding: 5px;
+  border: 1px solid #ccc;
+  font-size: 10px; /* מקטין את הגודל של ה-tooltip */
+}
+
+.graph-title {
+  margin-bottom: 10px; /* רווח קטן בין הכותרת לגרף */
+  text-align: center;  /* מיקוד הכותרת למרכז */
 }
