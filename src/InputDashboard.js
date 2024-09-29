@@ -45,91 +45,11 @@ const InputDashboard = ({ sendTask }) => {
     setExecutionInterval('');    
   };
 
-  const priorities = ['Critical', 'Higher', 'Middle', 'Lower'];
+  const priorities = ['Critical', 'High', 'Middle', 'Low'];
 
   return (
     <div className="input-dashboard">
       <h2>Input Dashboard</h2>
-      {/* <form onSubmit={handleSubmit}>
-        <div className='task-input'>
-        <label>
-          Task Type:
-          <select value={taskType} onChange={(e) => setTaskType(e.target.value)}>
-            <option value="basic">Basic Task</option>
-            <option value="deadline">Deadline Task</option>
-            <option value="iterative">Iterative Task</option>
-            <option value="ordered">Ordered Task</option>
-          </select>
-        </label>
-        
-        <div className="priority-selection">
-          <h3>Select Priority:</h3>
-          <div className="priority-buttons">
-            {priorities.map((level) => (
-              <button 
-                key={level} 
-                type="button" 
-                className={`priority-button ${priority === level ? 'selected' : ''}`} 
-                onClick={() => setPriority(level)}
-              >
-                {level}
-              </button>
-            ))}
-          </div>
-        </div>
-        </div>
-        
-        <label>
-          Running Time:
-          <input 
-            type="number" 
-            min="0" 
-            value={runningTime} 
-            onChange={(e) => setRunningTime(e.target.value)} 
-            required 
-          />
-        </label>
-
-        {taskType === 'deadline' && (
-          <label>
-            Deadline:
-            <input 
-              type="number" 
-              min="0" 
-              value={deadline} 
-              onChange={(e) => setDeadline(e.target.value)} 
-              required 
-            />
-          </label>
-        )}
-
-        {taskType === 'iterative' && (
-          <>
-            <label>
-              Iterations Remaining:  
-              <input 
-                type="number" 
-                min="0" 
-                value={iterationsRemaining}  
-                onChange={(e) => setIterationsRemaining(e.target.value)}  
-                required 
-              />
-            </label>
-            <label>
-              Execution Interval:  
-              <input 
-                type="number" 
-                min="0" 
-                value={executionInterval}  
-                onChange={(e) => setExecutionInterval(e.target.value)}  
-                required 
-              />
-            </label>
-          </>
-        )}
-
-        <button type="submit">Send Task</button>
-      </form> */}
       <form onSubmit={handleSubmit}>
   <div className='task-input'>
     <label>
@@ -160,7 +80,7 @@ const InputDashboard = ({ sendTask }) => {
   </div>
 
   <label>
-    Running Time:
+    Running Time (mili seconds):
     <input
       type="number"
       min="0"
